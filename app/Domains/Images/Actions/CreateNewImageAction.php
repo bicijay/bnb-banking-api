@@ -13,7 +13,7 @@ class CreateNewImageAction
     public function execute(UploadedFile $image, int $userId): Image
     {
         $filename = time() . "-" . $image->getClientOriginalName();
-        $path = "public/images/{$userId}/{$filename}";
+        $path = "/images/{$userId}/{$filename}";
 
         Storage::put($path, $image->get());
 

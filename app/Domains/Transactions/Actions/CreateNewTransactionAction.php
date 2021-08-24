@@ -20,7 +20,7 @@ class CreateNewTransactionAction
             "amount" => $transactionDTO->amount,
             "description" => $transactionDTO->description,
             "user_id" => $transactionDTO->userId,
-            "transaction_at" => $transactionDTO->transaction_at
+            "transaction_at" => $transactionDTO->transaction_at ?? new \DateTime() //default value for today
         ]);
 
         $this->updateUserBalanceAction->execute(
